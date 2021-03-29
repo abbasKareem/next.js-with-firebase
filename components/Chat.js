@@ -38,11 +38,19 @@ export default Chat
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   cursor: pointer;
   word-break: break-word;
   :hover {
     background-color: #e9eaeb;
+  }
+  :active {
+    background-color: red;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 7px;
   }
 `
 const UserAvatar = styled(Avatar)`

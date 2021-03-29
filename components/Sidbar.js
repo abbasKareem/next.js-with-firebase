@@ -59,7 +59,7 @@ function Sidbar() {
         <SearchInput placeholder='Search in chats' />
       </Search>
 
-      <SidebarButton onClick={createChat}>Start a new chat</SidebarButton>
+      <SidebarButton onClick={createChat}>Start new chat</SidebarButton>
       {/* list of chat */}
       {chatsSnapshot?.docs.map((chat) => (
         <Chat key={chat.id} id={chat.id} users={chat.data().users} />
@@ -84,6 +84,12 @@ const Container = styled.div`
 
   -ms-overflow-style: none;
   scrollbar-width: none;
+
+  @media screen and (max-width: 480px) {
+    border-right: 1px solid whitesmoke;
+    min-width: 30px;
+    max-width: 50px;
+  }
 `
 
 const Search = styled.div`
@@ -91,6 +97,9 @@ const Search = styled.div`
   align-items: center;
   padding: 20px;
   border-radius: 2px;
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
 `
 
 const SidebarButton = styled(Button)`
@@ -98,6 +107,11 @@ const SidebarButton = styled(Button)`
   && {
     border-top: 1px solid whitesmoke;
     border-bottom: 1px solid whitesmoke;
+  }
+  @media screen and (max-width: 480px) {
+    background-color: #121201 !important;
+    font-size: 10px !important;
+    color: white !important ;
   }
 `
 
@@ -128,4 +142,8 @@ const UserAvatar = styled(Avatar)`
   }
 `
 
-const IconContainer = styled.div``
+const IconContainer = styled.div`
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
+`

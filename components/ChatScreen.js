@@ -107,12 +107,12 @@ function ChatScreen({ chat, messages }) {
           )}
         </HeaderInformation>
         <HeaderIcons>
-          <IconButton>
+          <Iconbutton>
             <AttachFileIcon />
-          </IconButton>
-          <IconButton>
+          </Iconbutton>
+          <Iconbutton>
             <MoreVertIcon />
-          </IconButton>
+          </Iconbutton>
         </HeaderIcons>
       </Header>
 
@@ -181,9 +181,27 @@ const HeaderInformation = styled.div`
     font-size: 14px;
     color: gray;
   }
+
+  @media screen and (max-width: 480px) {
+    margin-left: 2px;
+    flex: 1;
+    > h3 {
+      font-size: 17px;
+      margin-bottom: 1px;
+    }
+    > p {
+      font-size: 14px;
+      color: gray;
+    }
+  }
 `
 
-const HeaderIcons = styled.div``
+const HeaderIcons = styled.div`
+  @media screen and (max-width: 480px) {
+    display: flex;
+    flex-direction: column;
+  }
+`
 
 const EndOfMessage = styled.div`
   margin-bottom: 50px;
@@ -193,4 +211,10 @@ const MessageContainer = styled.div`
   background-color: #e5ded8;
   padding: 30px;
   min-height: 90vh;
+`
+
+const Iconbutton = styled(IconButton)`
+  @media screen and (max-width: 480px) {
+    padding: 1px !important;
+  }
 `
